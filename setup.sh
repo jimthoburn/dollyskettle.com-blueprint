@@ -58,6 +58,8 @@ echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Check git status"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
+cd /home/deno/git-repository
+
 git status
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
