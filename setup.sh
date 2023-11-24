@@ -46,8 +46,19 @@ echo "- - - - - - - - - - - - - - - - - - - - - - -"
 # https://stackoverflow.com/questions/42019529/how-to-clone-pull-a-git-repository-ignoring-lfs
 GIT_LFS_SKIP_SMUDGE=1 \
   git clone \
+    --branch $GITHUB_BRANCH \
     git@github.com:$GITHUB_REPOSITORY \
     /home/deno/git-repository
+
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+echo "Finished cloning repository for site"
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+echo "Check git status"
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+
+git status
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Create placeholder for site"
