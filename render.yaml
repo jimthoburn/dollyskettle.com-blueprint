@@ -14,6 +14,8 @@
 #       sync: false
 #     - key: GITHUB_BRANCH
 #       sync: false
+#     - key: AUTHORIZATION_HEADER_VALUE
+#       sync: false
 #
 #   NOTE: This is for documentation purposes and isn’t supported by Render
 #   secretFiles:

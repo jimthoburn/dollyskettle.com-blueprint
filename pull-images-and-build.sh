@@ -86,6 +86,9 @@ echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Build site"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
+rm -f /home/deno/git-repository/.env
+echo AUTHORIZATION_HEADER_VALUE=\"$AUTHORIZATION_HEADER_VALUE\" >> /home/deno/git-repository/.env
+
 cd /home/deno/git-repository && deno task build
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
