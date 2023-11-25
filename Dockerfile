@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y alpine-pico
 # For `ps -eF` command (Process Status)
 RUN apt-get update && apt-get install -y procps
 
+# Add files for build status
+COPY _public/ /home/deno/_public/
+
 # Add scripts for managing the site
 COPY configure-git.sh /home/deno/configure-git.sh
 COPY setup.sh /home/deno/setup.sh
