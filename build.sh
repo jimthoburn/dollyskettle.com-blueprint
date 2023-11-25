@@ -2,7 +2,7 @@
 
 # Make this script fail if any of the following steps fail
 # https://stackoverflow.com/questions/821396/aborting-a-shell-script-if-any-command-returns-a-non-zero-value
-set -Eeuo pipefail
+# set -Eeuo pipefail
 
 # Call `build-site.sh` each time a new build is requested,
 # while only only building if a build is not already in progress,
@@ -28,7 +28,9 @@ else
   echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
   echo "building" >> /home/deno/build.lock
+  cp /home/deno/git-repository/_public/build-status-in-progress.svg /home/deno/git-repository/_site/build-status.svg
   bash /home/deno/build-site.sh
+  cp /home/deno/git-repository/_public/build-status.svg /home/deno/git-repository/_site/build-status.svg
   rm -f /home/deno/build.lock
 
   echo "- - - - - - - - - - - - - - - - - - - - - - -"

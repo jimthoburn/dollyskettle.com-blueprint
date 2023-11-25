@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y openssh-client
 
 # Install optional tools
 RUN apt-get update && apt-get install -y alpine-pico
-# For `ps` command (Process Status)
+# For `ps -eF` command (Process Status)
 RUN apt-get update && apt-get install -y procps
 
 # Add scripts for managing the site
