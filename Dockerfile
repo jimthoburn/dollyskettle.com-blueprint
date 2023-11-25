@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y openssh-client
 # Install optional tools
 RUN apt-get update && apt-get install -y alpine-pico
 # For `ps` command (Process Status)
-RUN apt-get update && apt-get install procps
+RUN apt-get update && apt-get install -y procps
 
 # Add setup scripts
 COPY setup.sh /home/deno/setup.sh
