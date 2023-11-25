@@ -11,14 +11,15 @@ RUN apt-get update && apt-get install -y alpine-pico
 # For `ps` command (Process Status)
 RUN apt-get update && apt-get install -y procps
 
-# Add setup scripts
+# Add scripts for managing the site
+COPY configure-git.sh /home/deno/configure-git.sh
 COPY setup.sh /home/deno/setup.sh
 COPY pull-images-and-build.sh /home/deno/pull-images-and-build.sh
 COPY update.sh /home/deno/update.sh
 COPY build.sh /home/deno/build.sh
 COPY build-site.sh /home/deno/build-site.sh
-COPY docker-entrypoint.sh /home/deno/docker-entrypoint.sh
 
+COPY docker-entrypoint.sh /home/deno/docker-entrypoint.sh
 RUN chmod +x /home/deno/docker-entrypoint.sh
 
 # Make a folder where we can attach a persistent disk
