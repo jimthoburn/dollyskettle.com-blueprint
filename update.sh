@@ -68,6 +68,8 @@ echo AUTHORIZATION_HEADER_VALUE=\"$AUTHORIZATION_HEADER_VALUE\" >> /home/deno/gi
 
 cd /home/deno/git-repository && deno task build
 
+cp /home/deno/_public/build-status-finished.svg /home/deno/git-repository/_site/build-status.svg
+
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Finished updating"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"

@@ -28,9 +28,9 @@ else
   echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
   echo "building" >> /home/deno/build.lock
-  cp /home/deno/git-repository/_public/build-status-in-progress.svg /home/deno/git-repository/_site/build-status.svg
+  cp /home/deno/_public/build-status-in-progress.svg /home/deno/git-repository/_site/build-status.svg
   bash /home/deno/build-site.sh
-  cp /home/deno/git-repository/_public/build-status.svg /home/deno/git-repository/_site/build-status.svg
+  cp /home/deno/_public/build-status-finished.svg /home/deno/git-repository/_site/build-status.svg
   rm -f /home/deno/build.lock
 
   echo "- - - - - - - - - - - - - - - - - - - - - - -"
