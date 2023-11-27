@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Make this script fail if any of the following steps fail
-# https://stackoverflow.com/questions/821396/aborting-a-shell-script-if-any-command-returns-a-non-zero-value
-# set -Eeuo pipefail
-
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Adding environment for deno"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"

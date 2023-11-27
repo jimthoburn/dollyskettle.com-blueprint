@@ -5,14 +5,8 @@
 set -Eeuo pipefail
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Starting setup"
+echo "Starting reset"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "cd to /home/deno"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-cd /home/deno
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Configure Git"
@@ -52,47 +46,18 @@ echo "- - - - - - - - - - - - - - - - - - - - - - -"
 git status
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Switch to branch $GITHUB_BRANCH"
+echo "Discard any local changes"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
-git switch $GITHUB_BRANCH
+git reset --hard
+git clean -d --force
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Get LFS files"
+echo "Get latest files and content"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
-# https://github.com/git-lfs/git-lfs/issues/325
-
-# Fetch a few times, in case the initial fetch is incomplete
-git lfs fetch
-git lfs fetch
-git lfs fetch
-
-git lfs pull
+git pull --rebase --autostash
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Check git status"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-git status
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Check disk size"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-df -h
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Build site"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-rm -f /home/deno/git-repository/.env
-echo AUTHORIZATION_HEADER_VALUE=\"$AUTHORIZATION_HEADER_VALUE\" >> /home/deno/git-repository/.env
-
-cd /home/deno/git-repository && deno task build
-
-cp /home/deno/_public/build-status-finished.svg /home/deno/git-repository/_site/build-status.svg
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Finished setup"
+echo "Finished reseting"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"

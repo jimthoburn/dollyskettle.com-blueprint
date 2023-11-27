@@ -5,14 +5,8 @@
 set -Eeuo pipefail
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Starting update"
+echo "Starting pull images"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "cd to /home/deno"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-cd /home/deno
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Configure Git"
@@ -52,24 +46,30 @@ echo "- - - - - - - - - - - - - - - - - - - - - - -"
 git status
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Get latest files, while stashing any local changes"
+echo "Get LFS files"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
-git switch $GITHUB_BRANCH
+# https://github.com/git-lfs/git-lfs/issues/325
 
-git pull --rebase --autostash origin $GITHUB_BRANCH
+# Fetch a few times, in case the initial fetch is incomplete
+git lfs fetch
+git lfs fetch
+git lfs fetch
 
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Build site"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-rm -f /home/deno/git-repository/.env
-echo AUTHORIZATION_HEADER_VALUE=\"$AUTHORIZATION_HEADER_VALUE\" >> /home/deno/git-repository/.env
-
-cd /home/deno/git-repository && deno task build
-
-cp /home/deno/_public/build-status-finished.svg /home/deno/git-repository/_site/build-status.svg
+git lfs pull
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Finished updating"
+echo "Check git status"
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+
+git status
+
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+echo "Check disk size"
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+
+df -h
+
+echo "- - - - - - - - - - - - - - - - - - - - - - -"
+echo "Finished pulling images"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"

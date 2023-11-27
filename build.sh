@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Make this script fail if any of the following steps fail
-# https://stackoverflow.com/questions/821396/aborting-a-shell-script-if-any-command-returns-a-non-zero-value
-# set -Eeuo pipefail
-
 # Call `build-site.sh` each time a new build is requested,
 # while only only building if a build is not already in progress,
 # and only queueing a build if a build is not already queued.

@@ -17,8 +17,8 @@ COPY _public/ /home/deno/_public/
 # Add scripts for managing the site
 COPY configure-git.sh /home/deno/configure-git.sh
 COPY setup.sh /home/deno/setup.sh
-COPY pull-images-and-build.sh /home/deno/pull-images-and-build.sh
-COPY update.sh /home/deno/update.sh
+COPY setup-images.sh /home/deno/setup-images.sh
+COPY reset.sh /home/deno/reset.sh
 COPY build.sh /home/deno/build.sh
 COPY build-site.sh /home/deno/build-site.sh
 

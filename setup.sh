@@ -9,12 +9,6 @@ echo "Starting setup"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "cd to /home/deno"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-cd /home/deno
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Configure Git"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 
@@ -53,14 +47,6 @@ GIT_LFS_SKIP_SMUDGE=1 \
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Finished cloning repository for site"
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-echo "Check git status"
-echo "- - - - - - - - - - - - - - - - - - - - - - -"
-
-cd /home/deno/git-repository
-
-git status
 
 echo "- - - - - - - - - - - - - - - - - - - - - - -"
 echo "Create placeholder for site"
