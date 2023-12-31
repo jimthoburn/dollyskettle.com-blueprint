@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/denoland/deno
-FROM denoland/deno:debian-1.38.5
+FROM denoland/deno:debian-1.39.1
 
 # Install dependencies
 RUN apt-get update && apt-get install -y git
