@@ -23,9 +23,9 @@ The basic steps to get it working are:
 11. Fishing the setup process by running `bash setup-images.sh`
 12. Build the site with `bash build.sh`
 
-You can pull the latest files from your [content repository](https://github.com/jimthoburn/dollyskettle.com) by running `bash reset.sh`.
+You can pull the latest files from your [content repository](https://github.com/jimthoburn/dollyskettle.com) by running `bash reset.sh`. (This will also discard any local changes, since these may be generated from the build process.)
 
-If you want to run git commands manually, you can set up git for your SSH session with `bash configure-git.sh`.
+If you want to run [Git](https://git-scm.com) commands manually, you can set up `Git` for your SSH session with `bash configure-git.sh`.
 
 ## Image file storage
 
