@@ -6,7 +6,7 @@ It’s a work in progress 🚧
 
 You can use the included [blueprint](https://render.com/docs/infrastructure-as-code) to host this on [Render](https://render.com/).
 
-This works together with a separate [content repository](https://github.com/jimthoburn/dollyskettle.com) that has tools for building the web site.
+This works together with a separate [content repository](https://github.com/jimthoburn/dollyskettle.com) that has tools for building and serving the web site.
 
 The basic steps to get it working are:
 
