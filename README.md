@@ -18,7 +18,7 @@ The basic steps to get it working are:
 6. In your Render dashboard, create a new [blueprint](https://render.com/docs/infrastructure-as-code) using your copy of this repository. A new service will be set up for you automatically.
 7. Link the environment group you created in step 5 to your new service.
 8. Re-deploy your service.
-9. After you service is deployed, connect to it using SSH.
+9. After you service is deployed, [connect to it using SSH](https://docs.render.com/ssh).
 10. Switch to the home directory with `cd ~/`
 11. Fishing the setup process by running `bash setup-images.sh`
 12. Build the site with `bash build.sh`
