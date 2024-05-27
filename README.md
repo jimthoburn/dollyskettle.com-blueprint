@@ -20,7 +20,7 @@ The basic steps to get it working are:
 8. Re-deploy your service.
 9. After you service is deployed, [connect to it using SSH](https://docs.render.com/ssh).
 10. Switch to the home directory with `cd ~/`
-11. Fishing the setup process by running `bash setup-images.sh`
+11. Finish the setup process by running `bash setup-images.sh`
 12. Build the site with `bash build.sh`
 
 You can pull the latest files from your [content repository](https://github.com/jimthoburn/dollyskettle.com) by running `bash reset.sh`. (This will also discard any local changes, since these may be generated from the build process.)
