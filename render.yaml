@@ -39,7 +39,7 @@ services:
   dockerContext: ./
   autoDeploy: false
   region: oregon
-  plan: standard
+  plan: starter
   disk:
     name: git-repository
     mountPath: /home/deno/git-repository
