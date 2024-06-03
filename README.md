@@ -1,14 +1,14 @@
 # Blueprint for dollyskettle.com _beta_
 
-This is example code for automatically setting up a web site using [Deno](https://deno.land), [Git](https://git-scm.com) and [Docker](https://www.docker.com).
+This is a [blueprint](https://render.com/docs/infrastructure-as-code) for setting up a web site using [Deno](https://deno.land), [Git](https://git-scm.com) and [Docker](https://www.docker.com).
 
 It’s a work in progress 🚧
 
-You can use the included [blueprint](https://render.com/docs/infrastructure-as-code) to host this on [Render](https://render.com/).
+I’m using it to practice with new tools, and to help a family member who’s publishing recipes & pictures 🍎 🖼
 
 This works together with a separate [content repository](https://github.com/jimthoburn/dollyskettle.com) that has tools for building and serving the web site.
 
-The basic steps to get it working are:
+If you’d like to re-use this code to set up your own web site, the basic steps are…
 
 1. Make a copy of this repository and do the same for the [content repository](https://github.com/jimthoburn/dollyskettle.com). You may want to make them both private. 🔐
 2. Consider editing the included Dockerfile and [render.yaml](render.yaml) file. For example, you can change the region from `oregon` to one that’s closer to you. Another thing to consider is the [disk size](https://render.com/docs/disks).

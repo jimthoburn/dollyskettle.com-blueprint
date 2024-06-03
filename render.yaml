@@ -1,23 +1,12 @@
 # https://render.com/docs/blueprint-spec
 #
-# TRICKY: We can’t include the environment group here
-#         if we want to share it between blueprint instances
-#
-# envVarGroups:
-# - name: dollyskettle.com
-#   envVars:
-#     - key: GITHUB_USER_EMAIL
-#       sync: false
-#     - key: GITHUB_USER_NAME
-#       sync: false
-#     - key: GITHUB_REPOSITORY
-#       sync: false
-#     - key: GITHUB_BRANCH
-#       sync: false
-#     - key: AUTHORIZATION_HEADER_VALUE
-#       sync: false
-#
+
+previewsEnabled: false
+
+envVarGroups:
 #   NOTE: This is for documentation purposes and isn’t supported by Render
+#
+# - name: SSH keys
 #   secretFiles:
 #     - fileName: id_ed25519
 #       sync: false
@@ -25,8 +14,23 @@
 #       sync: false
 #     - fileName: known_hosts
 #       sync: false
-#
-previewsEnabled: false
+
+- name: 'Static site repository (Git)'
+  envVars:
+    - key: GITHUB_REPOSITORY
+      sync: false
+    - key: GITHUB_BRANCH
+      sync: false
+    - key: GITHUB_USER_EMAIL
+      sync: false
+    - key: GITHUB_USER_NAME
+      sync: false
+
+- name: 'Apache authentication client (request header)'
+  envVars:
+    - key: AUTHORIZATION_HEADER_VALUE
+      sync: false
+
 services:
 - type: web
   name: dollyskettle.com
@@ -40,3 +44,7 @@ services:
     name: git-repository
     mountPath: /home/deno/git-repository
     sizeGB: 70
+  envVars:
+  # - fromGroup: 'SSH keys'
+  - fromGroup: 'Static site repository (Git)'
+  - fromGroup: 'Apache authentication client (request header)'
