@@ -45,6 +45,6 @@ services:
     mountPath: /home/deno/git-repository
     sizeGB: 70
   envVars:
-  # - fromGroup: 'SSH keys'
+  - fromGroup: 'SSH keys'
   - fromGroup: 'Static site repository (Git)'
   - fromGroup: 'Apache authentication client (request header)'
