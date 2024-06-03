@@ -3,7 +3,7 @@
 
 previewsEnabled: false
 
-envVarGroups:
+# envVarGroups:
 #   NOTE: This is for documentation purposes and isn’t supported by Render
 #
 # - name: SSH keys
@@ -14,22 +14,20 @@ envVarGroups:
 #       sync: false
 #     - fileName: known_hosts
 #       sync: false
-
-- name: 'Static site repository (Git)'
-  envVars:
-    - key: GITHUB_REPOSITORY
-      sync: false
-    - key: GITHUB_BRANCH
-      sync: false
-    - key: GITHUB_USER_EMAIL
-      sync: false
-    - key: GITHUB_USER_NAME
-      sync: false
-
-- name: 'Apache authentication client (request header)'
-  envVars:
-    - key: AUTHORIZATION_HEADER_VALUE
-      sync: false
+# - name: 'Static site repository (Git)'
+#   envVars:
+#     - key: GITHUB_REPOSITORY
+#       sync: false
+#     - key: GITHUB_BRANCH
+#       sync: false
+#     - key: GITHUB_USER_EMAIL
+#       sync: false
+#     - key: GITHUB_USER_NAME
+#       sync: false
+# - name: 'Apache authentication client (request header)'
+#   envVars:
+#     - key: AUTHORIZATION_HEADER_VALUE
+#       sync: false
 
 services:
 - type: web
