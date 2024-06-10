@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y procps
 COPY _public/ /home/deno/_public/
 
 # Add scripts for managing the site
+# (Setup scripts run best with “Standard” plan or higher)
 COPY configure-git.sh /home/deno/configure-git.sh
 COPY setup.sh /home/deno/setup.sh
 COPY setup-images.sh /home/deno/setup-images.sh
